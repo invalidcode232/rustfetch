@@ -1,9 +1,13 @@
 mod sysinfo;
 
 fn main() {
-    let user =  sysinfo::user::get();
+    let mut output = "
+        user: `user`
+        uptime: `uptime`
+    ".to_string();
 
-    if user.value.is_some() {
-        println!("{}: {}", user.label, user.value.unwrap());
-    }
+    output = output.replace("`user`", &sysinfo::user::get().unwrap());
+    output = output.replace("`uptime`", &sysinfo::uptime::get());
+
+    println!("{}", output);
 }
