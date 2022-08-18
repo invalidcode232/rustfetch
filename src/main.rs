@@ -1,18 +1,26 @@
+use std::{fs::OpenOptions, io::Read};
+
 mod sysinfo;
+mod utils;
 
 fn main() {
-    // this is just a sample output,
-    // will be replaced with the contents of an actual config file.
-    let mut output = "
-        user: `user`
-        uptime: `uptime`
-        shell: `shell`
-    "
-    .to_string();
+    let user = sysinfo::user::get();
+    let mut config_file = OpenOptions::new()
+                    .read(true)
+                    .write(true)
+                    .create(true)
+                    .open(format!("/home/{}/.config/rustfetch", &user))
+                    .unwrap();
 
-    output = output.replace("`user`", &sysinfo::user::get());
-    output = output.replace("`uptime`", &sysinfo::uptime::get());
-    output = output.replace("`shell`", &sysinfo::shell::get());
+    let mut config = String::new();
+    let res = config_file.read_to_string(&mut config);
+    if res.is_err() {
+        panic!("error: failed to read config file");
+    }
 
-    println!("{}", output);
+    utils::handle_module::format(&mut config, "`user`", sysinfo::user::get());
+    utils::handle_module::format(&mut config, "`uptime`", sysinfo::uptime::get());
+    utils::handle_module::format(&mut config, "`shell`", sysinfo::shell::get());
+
+    println!("{}", config);
 }
