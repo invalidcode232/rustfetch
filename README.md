@@ -20,6 +20,13 @@ Shell: `shell`
 ```  
 rustfetch will automatically replace user, uptime, and shell with their appropriate values.
 
+### Available modules:
+\`user\`: Username  
+\`uptime\`: System uptime  
+\`shell\`: Shell  
+\`kernel\`: Kernel version  
+\`free\`: Free memory  
+
 ## Credits
-[nitch](https://github.com/unxsh/nitch) - ASCII art
+[nitch](https://github.com/unxsh/nitch) - ASCII art  
 [freshfetch](https://github.com/K4rakara/freshfetch) - Inspiration
