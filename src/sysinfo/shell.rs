@@ -1,7 +1,12 @@
 use std::{env::var};
 
 pub fn get() -> String {
-    let path = var("SHELL").ok().unwrap();
+    let shell = var("SHELL").ok();
 
-    return path.split("/").last().unwrap().to_string();
+    if shell.is_none() {
+        println!("error: failed to fetch shell");
+        return "".to_string();
+    }
+
+    shell.unwrap().split("/").last().unwrap().to_string()
 }
