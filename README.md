@@ -19,3 +19,7 @@ Uptime: `uptime`
 Shell: `shell`
 ```  
 rustfetch will automatically replace user, uptime, and shell with their appropriate values.
+
+## Credits
+[nitch](https://github.com/unxsh/nitch) - ASCII art
+[freshfetch](https://github.com/K4rakara/freshfetch) - Inspiration

@@ -17,5 +17,5 @@ pub fn get() -> String {
 
     let free_memory_int: i32 = free_memory.trim().parse().unwrap();
 
-    return (free_memory_int / 1024).to_string() + "MiB";
+    return (free_memory_int / 1024).to_string() + " MiB";
 }
