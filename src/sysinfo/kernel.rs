@@ -12,5 +12,5 @@ pub fn get() -> String {
     let contents = read_file.unwrap();
     let kernel = contents.split(" ").collect::<Vec<&str>>()[2];
 
-    return "".to_string();
+    return kernel.to_string();
 }
