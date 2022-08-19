@@ -18,5 +18,5 @@ pub fn get() -> String {
     let h = uptime / 60 / 60 % 24;
     let m = uptime / 60 % 60;
 
-    return format!("{}d {}h {}m", d, h, m);
+    format!("{}d {}h {}m", d, h, m)
 }

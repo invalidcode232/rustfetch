@@ -22,6 +22,7 @@ rustfetch will automatically replace user, uptime, and shell with their appropri
 
 ### Available modules:
 \`user\`: Username  
+\`distro\`: Distro name
 \`uptime\`: System uptime  
 \`shell\`: Shell  
 \`kernel\`: Kernel version  
