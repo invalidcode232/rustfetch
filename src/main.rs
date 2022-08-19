@@ -22,6 +22,7 @@ fn main() {
     utils::handle_module::format(&mut config, "`uptime`", sysinfo::uptime::get());
     utils::handle_module::format(&mut config, "`shell`", sysinfo::shell::get());
     utils::handle_module::format(&mut config, "`kernel`", sysinfo::kernel::get());
+    utils::handle_module::format(&mut config, "`free`", sysinfo::memory::get());
 
     println!("{}", config);
 }

@@ -6,6 +6,9 @@ Features:
 - Dependency-free
 - Built with rust!
 
+## Preview
+![preview](https://media.discordapp.net/attachments/705201939708772406/1010020825811910666/unknown.png)
+
 ## Config
 rustfetch configuration is located at ~/.config/rustfetch
 
