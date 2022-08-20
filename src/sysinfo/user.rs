@@ -1,4 +1,4 @@
-use std::{env::var};
+use std::env::var;
 
 pub fn get() -> String {
     let user = var("USER").ok();
@@ -10,3 +10,4 @@ pub fn get() -> String {
 
     user.unwrap()
 }
+
