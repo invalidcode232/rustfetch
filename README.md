@@ -26,7 +26,8 @@ rustfetch will automatically replace user, uptime, and shell with their appropri
 \`uptime\`: System uptime  
 \`shell\`: Shell  
 \`kernel\`: Kernel version  
-\`free\`: Free memory  
+\`free\`: Free memory 
+\`bios\`: BIOS version
 
 ## Credits
 [nitch](https://github.com/unxsh/nitch) - ASCII art  
