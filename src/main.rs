@@ -18,14 +18,14 @@ fn main() {
         panic!("error: failed to read config file");
     }
 
-    utils::handle_module::format(&mut config, "`user`", sysinfo::user::get());
-    utils::handle_module::format(&mut config, "`uptime`", sysinfo::uptime::get());
-    utils::handle_module::format(&mut config, "`shell`", sysinfo::shell::get());
-    utils::handle_module::format(&mut config, "`kernel`", sysinfo::kernel::get());
-    utils::handle_module::format(&mut config, "`free`", sysinfo::memory::get());
-    utils::handle_module::format(&mut config, "`distro`", sysinfo::distro::get());
-    // utils::handle_module::format(&mut config, "`host`", sysinfo::host::get());
-    utils::handle_module::format(&mut config, "`bios`", sysinfo::bios::get());
+    utils::handle_module::format(&mut config, "`user`", &sysinfo::user::get);
+    utils::handle_module::format(&mut config, "`uptime`", &sysinfo::uptime::get);
+    utils::handle_module::format(&mut config, "`shell`", &sysinfo::shell::get);
+    utils::handle_module::format(&mut config, "`kernel`", &sysinfo::kernel::get);
+    utils::handle_module::format(&mut config, "`free`", &sysinfo::memory::get);
+    utils::handle_module::format(&mut config, "`distro`", &sysinfo::distro::get);
+    utils::handle_module::format(&mut config, "`host`", &sysinfo::host::get);
+    utils::handle_module::format(&mut config, "`bios`", &sysinfo::bios::get);
 
     println!("{}", config);
 }
